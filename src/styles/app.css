@@ -1,0 +1,1229 @@
+/* Penyesuaian kecil untuk React. Tampilan utama tetap dari style.css lama. */
+
+/* #root sempat selebar isi, bukan selebar layar, sehingga dashboard
+   menyisakan ruang kosong besar di kanan. Paksa penuh. */
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+a.logo {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-loading {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.app-loading--full {
+  min-height: 100vh;
+}
+
+.phase-card {
+  max-width: 520px;
+  margin: 80px auto;
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.phase-icon {
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.phase-card h1 {
+  font-size: 20px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.phase-card p {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.phase-badge {
+  display: inline-block;
+  margin-top: 18px;
+  background: #ecfdf5;
+  color: #059669;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.phase-link {
+  display: inline-block;
+  margin-top: 20px;
+  background: #0f172a;
+  color: #fff;
+  padding: 11px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.admin-page .content .phase-card {
+  margin: 0 auto;
+}
+
+/* Tombol Keluar memakai <button>, bukan <a> seperti versi PHP. */
+.admin-page button.btn-logout {
+  background: none;
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.pd-standalone {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+/* Deskripsi motor disimpan dengan baris baru; tampilkan seperti nl2br() di detail.php. */
+.detail-desc {
+  white-space: pre-line;
+}
+
+/* Halaman /pengajuan/:id berdiri sendiri tanpa header/footer. */
+.pd-body {
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .phase-card {
+    margin: 48px auto;
+    padding: 32px 24px;
+  }
+}
+
+/* Form login admin — dipindah dari CSS inline login.php. */
+.form-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.form-sub {
+  font-size: 13px;
+  color: #64748b;
+  margin-bottom: 36px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.input-group input {
+  width: 100%;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 13px 16px;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+}
+
+.input-group input::placeholder {
+  color: #475569;
+}
+
+.btn-masuk {
+  width: 100%;
+  background: #10b981;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background 0.2s;
+  margin-top: 8px;
+  font-family: inherit;
+}
+
+.btn-masuk:hover {
+  background: #059669;
+}
+
+.btn-masuk:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+/* ============================================================
+   Fase 5 — Form produk, laporan, kelola user
+   Tampilan mengikuti style.css lama dan inline CSS PHP.
+   ============================================================ */
+
+.admin-page .produk-deskripsi {
+  margin-bottom: 16px;
+}
+
+.admin-page .form-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.admin-page .produk-batal {
+  color: #64748b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.admin-page .produk-batal:hover {
+  color: #0f172a;
+}
+
+.admin-page .form-group input[type='file'] {
+  padding: 9px 12px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.admin-page .edit-subjudul {
+  margin: 26px 0 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.admin-page .edit-hint {
+  font-size: 12px;
+  color: #64748b;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.admin-page .slot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.admin-page .slot {
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
+  padding: 10px;
+  background: #f8fafc;
+  position: relative;
+}
+
+.admin-page .slot-terisi {
+  border-style: solid;
+  border-color: #d1fae5;
+  background: #fff;
+}
+
+.admin-page .slot-no {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  background: #0f172a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.admin-page .slot-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 8px;
+  background: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #94a3b8;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.admin-page .slot-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.admin-page .slot input[type='file'] {
+  font-size: 11px;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 5px;
+}
+
+.admin-page .slot-opsi {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.admin-page .slot-opsi label {
+  font-weight: 500;
+  font-size: 12px;
+  margin: 0;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.admin-page .slot-opsi .slot-hapus {
+  color: #b91c1c;
+}
+
+.admin-page .pembeli-box {
+  border: 2px dashed #fca5a5;
+  border-radius: 12px;
+  padding: 14px;
+  background: #fff7f7;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.admin-page .pembeli-box .slot-img {
+  width: 200px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+}
+
+.admin-page .pembeli-kanan {
+  flex: 1;
+  min-width: 200px;
+}
+
+.admin-page .pembeli-kanan input[type='file'] {
+  width: 100%;
+  padding: 8px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+/* ---------- Laporan Kas & Stok ---------- */
+
+.admin-page .lp-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  background: white;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  width: fit-content;
+}
+
+.admin-page .lp-tab {
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 13.5px;
+  color: #64748b;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-page .lp-tab-active {
+  background: #10b981;
+  color: white;
+  box-shadow: 0 4px 10px -3px rgba(16, 185, 129, 0.6);
+}
+
+.admin-page .lp-card {
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #eef2f5;
+  margin-bottom: 22px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.admin-page .lp-card-head {
+  padding: 18px 24px;
+  border-bottom: 1px solid #f1f5f9;
+  font-weight: 800;
+  color: #0f172a;
+  font-size: 15px;
+}
+
+.admin-page .lp-card-body {
+  padding: 22px 24px;
+}
+
+.admin-page .lp-filter {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.admin-page .lp-fg {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.admin-page .lp-filter .lp-fg {
+  margin-bottom: 0;
+}
+
+.admin-page .lp-fg label {
+  font-size: 11.5px;
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.admin-page .lp-fg input,
+.admin-page .lp-fg select {
+  padding: 10px 13px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1e293b;
+  background: #fbfcfd;
+  transition: 0.2s;
+}
+
+.admin-page .lp-fg input:focus,
+.admin-page .lp-fg select:focus {
+  outline: none;
+  border-color: #10b981;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+}
+
+.admin-page .lp-fg-wide {
+  width: 100%;
+}
+
+.admin-page .lp-fg-wide input {
+  width: 100%;
+}
+
+.admin-page .lp-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+  margin-bottom: 14px;
+}
+
+.admin-page .lp-filter .lp-btn {
+  margin-bottom: 0;
+}
+
+.admin-page .lp-btn-green {
+  background: #10b981;
+  color: white;
+}
+
+.admin-page .lp-btn-green:hover {
+  background: #059669;
+}
+
+.admin-page .lp-btn-export {
+  background: #0f172a;
+  color: white;
+}
+
+.admin-page .lp-btn-export:hover {
+  background: #1e293b;
+}
+
+.admin-page .lp-btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.admin-page .lp-stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.admin-page .lp-stat-box {
+  background: white;
+  border-radius: 14px;
+  padding: 18px 22px;
+  border: 1px solid #eef2f5;
+  position: relative;
+  overflow: hidden;
+}
+
+.admin-page .lp-stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.admin-page .lp-in::before {
+  background: #10b981;
+}
+
+.admin-page .lp-out::before {
+  background: #ef4444;
+}
+
+.admin-page .lp-net::before {
+  background: #0f172a;
+}
+
+.admin-page .lp-lbl {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.admin-page .lp-val {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.admin-page .lp-val-in {
+  color: #059669;
+}
+
+.admin-page .lp-val-out {
+  color: #dc2626;
+}
+
+.admin-page .lp-val-saldo {
+  color: #0f172a;
+}
+
+.admin-page .lp-form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.admin-page .lp-table-wrap {
+  overflow-x: auto;
+}
+
+.admin-page .lp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 600px;
+}
+
+.admin-page .lp-table th {
+  background: #f8fafc;
+  color: #64748b;
+  padding: 13px 20px;
+  text-align: left;
+  border-bottom: 2px solid #eef2f5;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-page .lp-table td {
+  padding: 13px 20px;
+  border-bottom: 1px solid #f4f6f8;
+  color: #334155;
+}
+
+.admin-page .lp-table tbody tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+.admin-page .lp-table tbody tr:hover {
+  background: #f0fdf9;
+}
+
+.admin-page .lp-empty {
+  text-align: center;
+  color: #94a3b8;
+}
+
+.admin-page .lp-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-page .lp-badge-masuk {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.admin-page .lp-badge-keluar {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.admin-page .lp-hapus {
+  color: #dc2626;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.admin-page .lp-hapus:hover {
+  background: #fee2e2;
+}
+
+/* ---------- Kelola User ---------- */
+
+.admin-page .ku-table th {
+  background: #0f172a;
+  color: white;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+}
+
+.admin-page .ku-th-aksi {
+  width: 200px;
+}
+
+.admin-page .ku-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-page .ku-badge-admin {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.admin-page .ku-badge-user {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+.admin-page .ku-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.admin-page .ku-btn-naik {
+  background: #0f172a;
+  color: white;
+}
+
+.admin-page .ku-btn-turun {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.admin-page .ku-me {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .admin-page .lp-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-page .slot-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-page .lp-stat-row,
+  .admin-page .lp-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page .lp-tabs {
+    width: 100%;
+  }
+
+  .admin-page .lp-tab {
+    flex: 1;
+    padding: 10px 12px;
+  }
+}
+
+/* ============================================================
+   Login admin berupa modal dari footer (tanpa halaman /login)
+   ============================================================ */
+
+.footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-login {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #cbd5e1;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #0f172a;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 40px 34px 34px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.login-brand {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #f8fafc;
+}
+
+.login-card .form-title {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 6px;
+  color: #f8fafc;
+}
+
+.login-card .form-sub {
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 14px;
+}
+
+.login-card .input-group {
+  margin-bottom: 20px;
+}
+
+.login-card .input-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.login-card .input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  color: #f8fafc;
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-card .input-group input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.login-card .btn-masuk {
+  width: 100%;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background: #10b981;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.05s;
+}
+
+.login-card .btn-masuk:hover:not(:disabled) {
+  background: #059669;
+}
+
+.login-card .btn-masuk:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.login-card .btn-masuk:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.login-card .login-modal-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #fca5a5;
+  font-size: 13px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+  .login-card {
+    padding: 34px 24px 28px;
+  }
+}
+
+/* ============================================================
+   Kerapian layout admin: lebar penuh, kartu statistik, drawer mobile
+   ============================================================ */
+
+/* Topbar: judul boleh memendek, tombol menu tetap di kiri. */
+.admin-page .topbar-kiri {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.admin-page .topbar-judul {
+  min-width: 0;
+}
+
+.admin-page .page-title,
+.admin-page .page-sub {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-page .menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.admin-page .menu-toggle:hover {
+  background: #e2e8f0;
+}
+
+.admin-page .sidebar-overlay {
+  display: none;
+}
+
+.admin-page .sidebar-nav {
+  overflow-y: auto;
+}
+
+.admin-page .stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.admin-page .stat-num-money {
+  font-size: clamp(17px, 1.4vw, 19px);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.admin-page .btn-sm {
+  white-space: nowrap;
+}
+
+.admin-page .table-wrap {
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 1400px) {
+  .admin-page .stat-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .admin-page .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+    box-shadow: none;
+  }
+
+  .admin-page .sidebar.sidebar-open {
+    transform: translateX(0);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+  }
+
+  .admin-page .main {
+    margin-left: 0;
+  }
+
+  .admin-page .menu-toggle {
+    display: inline-flex;
+  }
+
+  .admin-page .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    border: 0;
+    background: rgba(15, 23, 42, 0.5);
+    cursor: pointer;
+  }
+
+  .admin-page .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-page .content {
+    padding: 22px 20px 32px;
+  }
+
+  .admin-page .topbar {
+    padding: 14px 20px;
+  }
+
+  .admin-page .form-row-2,
+  .admin-page .form-row-3,
+  .admin-page .form-row-inline {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .admin-page .content {
+    padding: 18px 14px 28px;
+  }
+
+  .admin-page .topbar {
+    padding: 12px 14px;
+  }
+
+  .admin-page .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .admin-page .stat-card {
+    padding: 16px 14px;
+  }
+
+  .admin-page .panel-head {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px 18px;
+  }
+
+  .admin-page table {
+    font-size: 12.5px;
+  }
+
+  .admin-page th {
+    padding: 10px 14px;
+  }
+
+  .admin-page td {
+    padding: 11px 14px;
+  }
+
+  .admin-page .admin-name {
+    display: none;
+  }
+
+  .admin-page .admin-info {
+    gap: 0;
+    padding: 3px;
+  }
+
+  .modal-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-box {
+    padding: 22px 18px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin-page .stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page .stat-num-money {
+    font-size: 17px;
+  }
+}
+
+/* ============================================================
+   Halaman Profil Saya: kartu foto, info akun, form password
+   ============================================================ */
+
+/* Jarak antar kartu diatur grid, jadi margin bawaan panel dimatikan. */
+.admin-page .profil-card {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-page .profil-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Isi kartu disejajarkan dengan padding judul panel (24px). */
+.admin-page .profil-foto-area {
+  gap: 12px;
+  padding: 14px 24px 24px;
+  flex: 1;
+  justify-content: center;
+}
+
+.admin-page .profil-foto-preview {
+  width: 116px;
+  height: 116px;
+  border-color: #ecfdf5;
+  box-shadow: 0 10px 24px rgba(16, 185, 129, 0.25);
+}
+
+.admin-page .profil-foto-hint {
+  max-width: 280px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.admin-page .profil-info-list {
+  gap: 10px;
+  padding: 4px 24px 24px;
+  flex: 1;
+  justify-content: center;
+}
+
+.admin-page .profil-info-row {
+  background: #f8fafc;
+  border: 1px solid #eef2f7;
+  border-radius: 10px;
+  padding: 12px 14px;
+  border-bottom: 0;
+  gap: 16px;
+  min-width: 0;
+}
+
+.admin-page .profil-info-val {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.admin-page .profil-info-username-val {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.admin-page .profil-info-username {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.admin-page .btn-batal {
+  color: #64748b;
+  border-color: #e2e8f0;
+  background: #fff;
+}
+
+.admin-page .btn-batal:hover {
+  background: #f1f5f9;
+}
+
+.admin-page .profil-info-row-edit {
+  flex-wrap: wrap;
+}
+
+.admin-page .profil-username-edit {
+  display: flex;
+  flex: 1 1 220px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  min-width: 0;
+}
+
+.admin-page .profil-username-edit input {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 240px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 7px 10px;
+  color: #1e293b;
+  background: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+}
+
+.admin-page .profil-username-edit input:focus {
+  border-color: #10b981;
+}
+
+.admin-page .profil-username-edit input:disabled {
+  background: #f8fafc;
+  color: #94a3b8;
+}
+
+.admin-page .profil-username-edit .btn-sm {
+  padding: 8px 14px;
+}
+
+.admin-page .profil-pw-form {
+  padding: 4px 24px 24px;
+}
+
+.admin-page .profil-pw-row {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.admin-page .profil-pw-form .btn-green {
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .admin-page .profil-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-page .profil-pw-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .admin-page .profil-foto-area,
+  .admin-page .profil-info-list,
+  .admin-page .profil-pw-form {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .admin-page .profil-username-edit {
+    flex-basis: 100%;
+    justify-content: flex-start;
+  }
+
+  .admin-page .profil-username-edit input {
+    max-width: none;
+  }
+}

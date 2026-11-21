@@ -1,0 +1,20 @@
+node_modules
+dist
+dist-ssr
+.env
+.env.local
+.env.*.local
+.env.migrasi
+.env.migrasi.local
+vercel
+.vercel
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Bahan migrasi lokal (foto & dump lama), tidak ikut di-commit.
+# Catatan: public/uploads/ berisi gambar runtime dan HARUS ikut di-commit.
+referensi-php
+referensi-php/uploads/
+migrasi/
